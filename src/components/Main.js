@@ -12,12 +12,9 @@ var imageDatas = require('../data/imageData.json');
 imageDatas = (function genImageURL(imageDatasArr) {
     for (var i = 0, j = imageDatasArr.length; i < j; i++) {
         var singleImageData = imageDatasArr[i];
-
         singleImageData.imageURL = require('../images/' + singleImageData.fileName);
-
         imageDatasArr[i] = singleImageData;
     }
-
     return imageDatasArr;
 })(imageDatas);
 
@@ -78,9 +75,7 @@ var ImgFigure = React.createClass({
 
         return (
             <figure className={imgFigureClassName} style={styleObj} onClick={this.handleClick}>
-                <img src={this.props.data.imageURL}
-                     alt={this.props.data.title}
-                />
+                <img src={this.props.data.imageURL} alt={this.props.data.title}/>
                 <figcaption>
                     <h2 className="img-title">{this.props.data.title}</h2>
                     <div className="img-back" onClick={this.handleClick}>
